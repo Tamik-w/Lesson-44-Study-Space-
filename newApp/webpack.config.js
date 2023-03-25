@@ -3,7 +3,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const TreserPlugin = require('terser-webpack-plugin')
+const TreserPlugin = require('terser-webpack-plugin');
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -12,7 +12,12 @@ module.exports = {
     mode: 'development',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].[hash].js'},
+        filename: '[name].[hash].js'
+    },
+    devServer:{
+        watchFiles: path.resolve(__dirname, 'src'),
+        port: 3000,
+    },
     plugins: [
         new HTMLWebpackPlugin({
             template: './src/index.html'
@@ -20,11 +25,8 @@ module.exports = {
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: '[name].[hash].css'
-    })],
-    devServer:{
-        watchFiles: path.resolve(__dirname, 'src'),
-        port: 3000
-      },      
+        }),
+    ],
     module:{
         rules: [
             {
@@ -41,7 +43,12 @@ module.exports = {
                 },
                 exclude: /node_modules/,
             },
+            {
+                test: /\.(jpg|jpeg|png|svg|gif)$/,
+                use: ['file-loader']
+                },
         ]
+    
     },
     optimization: {
         minimizer: isProd ? [new CssMinimizerPlugin(), new TreserPlugin() ] : [],

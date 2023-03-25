@@ -1,5 +1,5 @@
 {
-  "name": "lesson38",
+  "name": "lesson44",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,20 +11,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tamik-w/Lesson-38-Study-space-.git"
+    "url": "git+https://github.com/Tamik-w/Lesson-44-Study-Space-.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Tamik-w/Lesson-38-Study-space-/issues"
+    "url": "https://github.com/Tamik-w/Lesson-44-Study-Space-/issues"
   },
-  "homepage": "https://github.com/Tamik-w/Lesson-38-Study-space-#readme",
+  "homepage": "https://github.com/Tamik-w/Lesson-44-Study-Space-#readme",
   "devDependencies": {
     "@babel/preset-react": "^7.18.6",
     "babel-loader": "^9.1.2",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.3",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.7.3",
     "sass": "^1.59.3",
@@ -39,6 +40,8 @@
     "css-minimizer-webpack-plugin": "^4.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5",
+    "redux": "^4.2.1",
     "terser-webpack-plugin": "^5.3.7",
     "uuid": "^9.0.0"
   }
